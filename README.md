@@ -6,6 +6,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+## Live Link to view project
+
+Open : [Link](https://meet-in-the-middle-lemon.vercel.app/) 
+
 ### `npm start`
 
 Runs the app in the development mode.\
