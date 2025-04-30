@@ -1,4 +1,4 @@
-// src/components/Dashboard/UserProfile.js
+
 import React, { useState } from 'react';
 import {
   Box,
@@ -28,7 +28,6 @@ import {
 } from '@mui/icons-material';
 import { format } from 'date-fns';
 
-// Reusable field configuration
 const profileFields = [
   {
     id: 'name',
@@ -63,7 +62,6 @@ const profileFields = [
   }
 ];
 
-// Sample user data
 const initialUserData = {
   name: 'John Doe',
   email: 'john.doe@example.com',
@@ -101,12 +99,12 @@ function UserProfile() {
     }));
   };
 
-  // Format date for display
+
   const formatDate = (dateString) => {
     return format(new Date(dateString), 'MMMM yyyy');
   };
 
-  // Stats items configuration
+  
   const statsItems = [
     {
       label: 'Upcoming Meetings',
@@ -177,23 +175,28 @@ function UserProfile() {
           </Box>
 
           <List sx={{ mt: 2 }}>
-            {statsItems.map((item, index) => (
-              <ListItem key={index}>
-                <ListItemText
-                  primary={item.value}
-                  secondary={item.label}
-                  primaryTypographyProps={{
-                    variant: 'h6',
-                    color: item.color,
-                    textAlign: 'center'
-                  }}
-                  secondaryTypographyProps={{
-                    textAlign: 'center'
-                  }}
-                />
-              </ListItem>
-            ))}
-          </List>
+  {statsItems.map((item, index) => (
+    <ListItem key={index}>
+      <ListItemText
+        primary={
+          <Typography 
+            variant="h6" 
+            color={item.color} 
+            textAlign="center"
+          >
+            {item.value}
+          </Typography>
+        }
+        secondary={
+          <Typography textAlign="center">
+            {item.label}
+          </Typography>
+        }
+      />
+    </ListItem>
+  ))}
+</List>
+            
         </Grid>
 
         <Grid item xs={12} md={8}>
@@ -216,14 +219,13 @@ function UserProfile() {
                   ) : (
                     <ListItemText
                       primary={field.label}
-                      secondary={field.id === 'joinedDate' 
-                        ? formatDate(userData[field.id]) 
-                        : userData[field.id]}
-                      secondaryTypographyProps={{
-                        sx: {
-                          wordBreak: 'break-word'
-                        }
-                      }}
+                      secondary={
+                        <Typography sx={{ wordBreak: 'break-word' }}>
+                          {field.id === 'joinedDate' 
+                            ? formatDate(userData[field.id]) 
+                            : userData[field.id]}
+                        </Typography>
+                      }
                     />
                   )}
                 </ListItem>

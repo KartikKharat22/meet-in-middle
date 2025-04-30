@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // updated
+import { useNavigate } from 'react-router-dom'; 
 import { TextField, Button, Box, Link, Typography } from '@mui/material';
 
 function Login({ onError, onSuccess }) {
     const [phone, setPhone] = useState('');
     const [error, setError] = useState('');
-    const navigate = useNavigate(); // updated
+    const navigate = useNavigate(); 
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -27,7 +27,7 @@ function Login({ onError, onSuccess }) {
         //     }
         //   };
 
-        onSuccess(); // No navigation change here, since you're using callback
+        onSuccess(); 
     };
 
     return (

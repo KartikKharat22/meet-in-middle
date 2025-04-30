@@ -1,4 +1,4 @@
-// src/components/Map/LocationPicker.js
+
 import React, { useState, useEffect, useRef } from 'react';
 import {
   Box,
@@ -20,7 +20,7 @@ import {
 import { useTheme } from '@mui/material/styles';
 import { LoadScript, GoogleMap, Marker, Autocomplete } from '@react-google-maps/api';
 
-// Map configuration constants
+
 const MAP_CONFIG = {
   containerStyle: {
     width: '100%',
@@ -34,7 +34,7 @@ const MAP_CONFIG = {
   selectedZoom: 15
 };
 
-// Libraries to load for Google Maps
+
 const LIBRARIES = ['places'];
 
 function LocationPicker({ 
@@ -54,7 +54,7 @@ function LocationPicker({
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
-  // Initialize with current location if no initial location provided
+  
   useEffect(() => {
     if (!initialLocation && interactive) {
       getCurrentLocation();
@@ -75,7 +75,7 @@ function LocationPicker({
           setCurrentLocation(location);
           setLoading(false);
           
-          // Only set as selected if no initial location
+          
           if (!initialLocation) {
             handleLocationSelect(location);
           }
@@ -136,7 +136,7 @@ function LocationPicker({
       };
       handleLocationSelect(location);
       
-      // Reverse geocode to get address
+      
       if (window.google && window.google.maps) {
         const geocoder = new window.google.maps.Geocoder();
         geocoder.geocode({ location }, (results, status) => {

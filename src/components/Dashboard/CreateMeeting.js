@@ -48,7 +48,7 @@ function CreateMeeting() {
             return;
         }
 
-        // Combine date and time
+    
         const meetingDateTime = new Date(date);
         meetingDateTime.setHours(time.getHours());
         meetingDateTime.setMinutes(time.getMinutes());

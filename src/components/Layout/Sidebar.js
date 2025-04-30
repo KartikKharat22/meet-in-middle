@@ -1,4 +1,4 @@
-// src/components/Layout/Sidebar.js
+
 import React from 'react';
 import {
   Drawer,
@@ -27,7 +27,6 @@ import {
 } from '@mui/icons-material';
 import { Link, useLocation } from 'react-router-dom';
 
-// Sidebar items configuration
 const sidebarItems = [
   {
     label: 'Dashboard',
@@ -64,7 +63,7 @@ function Sidebar({ mobileOpen, handleDrawerToggle, drawerWidth = 240 }) {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const location = useLocation();
 
-  // User data (would typically come from context/API)
+  
   const user = {
     name: 'John Doe',
     avatar: ''
@@ -72,7 +71,7 @@ function Sidebar({ mobileOpen, handleDrawerToggle, drawerWidth = 240 }) {
 
   const drawerContent = (
     <Box>
-      {/* User profile section */}
+  
       <Toolbar sx={{ display: 'flex', alignItems: 'center', p: 2 }}>
         <Avatar 
           src={user.avatar} 
@@ -86,7 +85,7 @@ function Sidebar({ mobileOpen, handleDrawerToggle, drawerWidth = 240 }) {
       </Toolbar>
       <Divider />
 
-      {/* Navigation items */}
+  
       <List>
         {sidebarItems.map((item, index) => (
           <React.Fragment key={item.label || `divider-${index}`}>
@@ -118,7 +117,7 @@ function Sidebar({ mobileOpen, handleDrawerToggle, drawerWidth = 240 }) {
         ))}
       </List>
 
-      {/* Logout at bottom */}
+    
       <Box sx={{ mt: 'auto', p: 2 }}>
         <Divider sx={{ mb: 2 }} />
         <ListItemButton>
@@ -137,13 +136,12 @@ function Sidebar({ mobileOpen, handleDrawerToggle, drawerWidth = 240 }) {
         flexShrink: { md: 0 }
       }}
     >
-      {/* Mobile drawer */}
       <Drawer
         variant={isMobile ? 'temporary' : 'permanent'}
         open={isMobile ? mobileOpen : true}
         onClose={handleDrawerToggle}
         ModalProps={{
-          keepMounted: true // Better open performance on mobile
+          keepMounted: true 
         }}
         sx={{
           '& .MuiDrawer-paper': {

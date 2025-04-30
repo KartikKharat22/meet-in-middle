@@ -19,7 +19,7 @@ function VerifyOTP() {
             try {
                 const res = await API.post('/auth/verify-otp', { phone, code });
                 localStorage.setItem('token', res.data.token);
-                // Store user data in context/state
+            
             } catch (err) {
                 // Handle error
             }

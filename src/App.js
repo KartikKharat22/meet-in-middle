@@ -6,6 +6,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { AuthProvider } from './context/AuthContext';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
+import Register from './components/Authentication/Register';
 import DashboardPage from './pages/DashboardPage';
 import AdminPage from './pages/AdminPage';
 import ProtectedRoute from './components/Authentication/ProtectedRoute';
@@ -29,11 +30,12 @@ function App() {
         <AuthProvider>
   
             <Routes>
-              {/* Public routes */}
+          
               <Route path="/" element={<HomePage />} />
               <Route path="/login" element={<LoginPage />} />
+              <Route path="/register" element={<Register />} />
 
-              {/* Protected routes */}
+             
               <Route
                 path="/dashboard"
                 element={
@@ -52,7 +54,7 @@ function App() {
                 }
               />
 
-              {/* 404 fallback */}
+
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
 

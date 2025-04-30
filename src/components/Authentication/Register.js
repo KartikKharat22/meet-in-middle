@@ -75,7 +75,7 @@ import {
       if (validForm()) {
         //TODO: Implement registration API call 
         console.log('Registration data: ', formData);
-        //after registration succeess redirect to VerifyOTP
+      
         navigate('/verify-otp');
       }
     };
@@ -111,7 +111,7 @@ import {
             </Grid>
             ))}
 
-           {/* Date piker */}
+           
 
            <Grid item xs={12} md={6}>
             <DatePicker
@@ -124,7 +124,7 @@ import {
             />
           </Grid>
 
-           {/* Gender Selection */}
+           
            <Grid item xs={12} md={6}>
             <FormControl fullWidth>
               <InputLabel>Gender</InputLabel>

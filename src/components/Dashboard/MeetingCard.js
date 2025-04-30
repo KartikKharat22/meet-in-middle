@@ -1,4 +1,4 @@
-// src/components/Dashboard/MeetingCard.js
+
 import React from "react";
 import {
   Card,
@@ -26,11 +26,11 @@ import {
 import { format, parseISO } from "date-fns";
 
 function MeetingCard({ meeting, past = false, attendees = [] }) {
-  // Format date & time
+  
   const formatMeetingTime = (date, time) => format(parseISO(`${date}T${time}`), "h:mm a");
   const formattedTime = formatMeetingTime(meeting.date,meeting.time);
 
-  //Meeting time status
+  
   const getTimeStatus = () => {
     if (past) return 'Past meeting';
     const now= new Date();
@@ -43,14 +43,14 @@ function MeetingCard({ meeting, past = false, attendees = [] }) {
     return format(meetingDateTime, "MMMM d, yyyy");
   };
 
-  // optimize meeting detail rendering
+  
   const meetingDateTimetails = [
     {icon: <CalendarToday color="action" sx={{fontSize: 18}}/>,text: getTimeStatus()},
     {icon: <LocationOn color='action' sx={{fontSize: 18}}/>, text: meeting.location || 'Location not specified'},
     {icon: <People color="action" sx={{fontSize: 18}} />, text: `${meeting.attendees} ${meeting.attendees ===1 ? "attendee" : attendees}`},
   ];
 
-  //optimize action buttons dynamically
+
   const actionButtons = past
   ? [{icon: <Share/>, label: 'Share Recap'}]
   :[
@@ -85,7 +85,7 @@ function MeetingCard({ meeting, past = false, attendees = [] }) {
                 
                 <Divider sx={{my: 1}}/>
 
-                {/* Dynamically render meeting details */}
+                
 
                 {meetingDateTimetails.map((detail,index) => (
                     <Box sx={{display: 'flex', alignItems:'center', mb:1}}>
@@ -94,7 +94,7 @@ function MeetingCard({ meeting, past = false, attendees = [] }) {
                     </Box>
                 ))}
 
-                {/* render participant avatars */}
+                
                 {meeting.participants?.length > 0 && (
                     <Box sx={{ mt: 2, display: "flex", alignItems: "center" }}>
                      {meeting.participants.slice(0, 3).map((participant, index) => (
@@ -131,7 +131,7 @@ function MeetingCard({ meeting, past = false, attendees = [] }) {
                 )}
             </CardContent>
 
-             {/* Dynamically render action buttons */}
+            
             <CardActions sx={{ justifyContent: "space-between", p: 2 }}>
                 {actionButtons.map((action, index) =>
                 action.tooltip ? (

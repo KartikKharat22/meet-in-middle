@@ -124,7 +124,7 @@ function SuggestionsMap({ midpoint, locations, participants = [], onSelect, init
 
   // Load suggestions when center or type changes
   useEffect(() => {
-    if (center && !locations) { // Only search if no predefined locations
+    if (center && !locations) { 
       findSuggestions();
     }
   }, [center, selectedType]);

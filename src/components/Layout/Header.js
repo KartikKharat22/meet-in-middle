@@ -27,14 +27,13 @@ import {
 import { Link, useNavigate } from 'react-router-dom';
 
 
-// Navigation items configuration
+
 const navItems = [
   { label: 'Home', path: '/dashboard' },
   { label: 'Meetings', path: '/meetings' },
   { label: 'Contacts', path: '/contacts' },
 ];
 
-// User menu items configuration
 const userMenuItems = [
   { label: 'Profile', icon: <AccountCircle />, path: '/profile' },
   { label: 'Dashboard', icon: <Dashboard />, path: '/dashboard' },
@@ -53,7 +52,7 @@ function Header({ onDrawerToggle }) {
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
-  // User data (would typically come from context/API)
+  
   const user = {
     name: 'John Doe',
     avatar: '',
@@ -76,7 +75,7 @@ function Header({ onDrawerToggle }) {
   const handleMenuItemClick = (item) => {
     handleMenuClose();
     if (item.action === 'logout') {
-      // Handle logout logic
+      
       console.log('Logout clicked');
       navigate(item.path);
     } else if (item.path) {
@@ -153,7 +152,7 @@ function Header({ onDrawerToggle }) {
   return (
     <AppBar position="fixed" sx={{ zIndex: (theme) => theme.zIndex.drawer + 1 }}>
       <Toolbar>
-        {/* Mobile menu button */}
+        
         {isMobile && (
           <IconButton
             color="inherit"
@@ -165,7 +164,7 @@ function Header({ onDrawerToggle }) {
           </IconButton>
         )}
 
-        {/* Logo/Brand */}
+      
         <Typography 
           variant="h6" 
           noWrap 
@@ -175,28 +174,28 @@ function Header({ onDrawerToggle }) {
           Meet in the Middle
         </Typography>
 
-        {/* Desktop Navigation */}
+        
         {!isMobile && (
           <Box sx={{ display: 'flex' }}>
             {renderNavItems()}
           </Box>
         )}
 
-        {/* Search (desktop) */}
+      
         {!isMobile && (
           <IconButton color="inherit" sx={{ ml: 1 }}>
             <Search />
           </IconButton>
         )}
 
-        {/* Notifications */}
+        
         <IconButton color="inherit">
           <Badge badgeContent={user.notifications} color="error">
             <Notifications />
           </Badge>
         </IconButton>
 
-        {/* User Profile */}
+    
         <IconButton
           edge="end"
           onClick={handleProfileMenuOpen}
@@ -211,7 +210,7 @@ function Header({ onDrawerToggle }) {
           </Avatar>
         </IconButton>
 
-        {/* Mobile More Menu */}
+        
         {isMobile && (
           <IconButton
             color="inherit"
@@ -222,7 +221,7 @@ function Header({ onDrawerToggle }) {
         )}
       </Toolbar>
 
-      {/* render menus */}
+  
       {renderUserMenu()}
       {isMobile && renderMobileMenu()}
     </AppBar>

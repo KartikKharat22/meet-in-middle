@@ -36,7 +36,7 @@ function MeetingDetails({ meeting, onClose }) {
 
   const confirmedCount = attendees.filter(a => a.status === 'confirmed').length;
 
-  // Real-time location sharing effect
+  
   useEffect(() => {
     let watchId = null;
     

@@ -16,13 +16,13 @@ function ProtectedRoute({ component: Component, requiredRole, ...rest }) {
                 pathname: '/login',
                 state: { from: props.location },
               }}
-              replace // Use replace for protected routes
+              replace 
             />
           );
         }
 
         if (requiredRole && user.role !== requiredRole) {
-          return <Navigate to="/" replace />; // Use replace here as well
+          return <Navigate to="/" replace />; 
         }
 
         return <Component {...props} />;
