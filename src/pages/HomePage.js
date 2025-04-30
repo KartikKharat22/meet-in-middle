@@ -1,4 +1,3 @@
-// src/pages/HomePage.js
 import React from 'react';
 import {
   Box,
@@ -20,7 +19,6 @@ import {
 import { useNavigate } from 'react-router-dom';
 import { FeatureCard } from '../components/Home/FeatureCard';
 
-// Feature items configuration
 const features = [
   {
     icon: <Groups fontSize="large" color="primary" />,
@@ -42,11 +40,10 @@ const features = [
 export function HomePage() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
-  const navigate = useNavigate(); // Using useNavigate hook
+  const navigate = useNavigate();
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      {/* Hero Section */}
       <Paper
         elevation={0}
         sx={{
@@ -82,7 +79,7 @@ export function HomePage() {
                   color="secondary"
                   size="large"
                   endIcon={<ArrowForward />}
-                  onClick={() => navigate('/register')} // Using navigate
+                  onClick={() => navigate('/register')}
                 >
                   Get Started
                 </Button>
@@ -90,7 +87,7 @@ export function HomePage() {
                   variant="outlined"
                   color="inherit"
                   size="large"
-                  onClick={() => navigate('/login')} // Using navigate
+                  onClick={() => navigate('/login')}
                 >
                   Login
                 </Button>
@@ -183,7 +180,7 @@ export function HomePage() {
               color="primary"
               size="large"
               endIcon={<ArrowForward />}
-              onClick={() => navigate('/register')} // Using navigate
+              onClick={() => navigate('/register')}
               sx={{ px: 6, py: 1.5 }}
             >
               Start for Free

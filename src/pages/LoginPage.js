@@ -18,7 +18,7 @@ import {
   ArrowBack
 } from '@mui/icons-material';
 import { AuthLayout } from '../components/Layout/AuthLayout';
-import Login from '../components/Authentication/Login'; // Import your Login component
+import Login from '../components/Authentication/Login';
 
 function LoginPage() {
   const theme = useTheme();
